@@ -1,10 +1,10 @@
-FROM ubuntu:14.04
-MAINTAINER MarvAmBass
+FROM php:7.0-apache
+LABEL maintainer "elgreg"
+LABEL via "marvambass/apache2-ssl-secure"
 
 ENV LANG C.UTF-8
 
 RUN apt-get update; apt-get install -y \
-    apache2 \
     openssl
 
 RUN rm -rf /var/www/html/*; rm -rf /etc/apache2/sites-enabled/*; \
